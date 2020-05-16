@@ -1,0 +1,13 @@
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" [(ngModel)]="term" type="search" placeholder="Search" name="term" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()" [disabled]="!term?.trim() || finder.state !== SearchStatus.Idle">Search</button>
+
+  <div [ngSwitch]="finder.state" class="ml-3">
+    <small [ngClass]="'alert alert-primary'" *ngSwitchCase="SearchStatus.Searching">searching&hellip;</small>
+    <small [ngClass]="'alert alert-primary'" *ngSwitchCase="SearchStatus.SearchingSlow">searching&hellip; please be patient&hellip;</small>
+    <small [ngClass]="'alert alert-danger'"  *ngSwitchCase="SearchStatus.Error">sorry, something went wrong</small>
+    <ng-container *ngSwitchCase="SearchStatus.Idle">
+      <small *ngIf="finder.people?.length > 0">{{finder.people?.length}} result(s)</small>
+    </ng-container> 
+  </div>  
+</form>

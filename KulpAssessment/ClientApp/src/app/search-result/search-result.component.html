@@ -1,0 +1,18 @@
+<div class="card search-result h-100">
+    <img src="{{getAvatar()}}" class="card-img-top" alt="Avatar image">
+    <div class="card-body">
+        <h5 class="card-title">{{person.lastName}}, {{person.firstName}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Age: {{getAgeDisplay()}}</h6>
+
+        <p class="card-text s" *ngIf="person.street1">
+            {{person.street1}} <br />
+            <span *ngIf="person.street2">{{person.street2}} <br /></span>
+            {{person.city}}, {{person.state}} {{person.postalCode}} <br />
+        </p>
+
+    </div>
+
+    <div class="card-footer">
+        <b>Interests: </b> {{person.interests || 'none'}}
+    </div>
+</div>
