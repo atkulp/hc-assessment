@@ -1,6 +1,6 @@
 # atk-assessment
 
-Pretty much boilerplate foundation generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+Pretty much boilerplate foundation generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.
 
 ## Development server
 
